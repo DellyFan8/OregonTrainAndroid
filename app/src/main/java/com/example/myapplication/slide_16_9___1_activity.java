@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class slide_16_9___1_activity extends Activity {
-
 	
 	private View _bg__slide_16_9___1_ek2;
 	private ImageView oregon_trail_opener_1;
