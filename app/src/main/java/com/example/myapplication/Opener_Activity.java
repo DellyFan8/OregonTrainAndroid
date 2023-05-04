@@ -18,6 +18,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 
@@ -25,7 +26,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class slide_16_9___1_activity extends Activity {
+public class Opener_Activity extends Activity {
 	
 	private View _bg__slide_16_9___1_ek2;
 	private ImageView oregon_trail_opener_1;
@@ -37,7 +38,7 @@ public class slide_16_9___1_activity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.slide_16_9___1);
+		setContentView(R.layout.opener_page);
 
 		
 		_bg__slide_16_9___1_ek2 = (View) findViewById(R.id._bg__slide_16_9___1_ek2);
@@ -51,13 +52,15 @@ public class slide_16_9___1_activity extends Activity {
 		
 		//custom code goes here
 
-		text.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				setContentView(R.layout.slide_16_9___2);
-			}
-		});
-	
+		text.setOnClickListener(v -> openActivity(Game_Mode_Activity.class));
+		text_ek2.setOnClickListener(v->openActivity(creditActivity.class));
+		text_ek1.setOnClickListener((v-> openActivity(aboutActivity.class)));
+
+	}
+
+	public void openActivity(Class classToOpen){
+		Intent intent = new Intent(this, classToOpen);
+		startActivity(intent);
 	}
 }
 	

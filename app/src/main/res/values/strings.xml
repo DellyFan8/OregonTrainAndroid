@@ -23,4 +23,20 @@
 	<string name="button_3_string">Button 3</string>
 	<string name="button_2_string">Button 2</string>
 	<string name="button_1_string">Button 1</string>
+
+	<!--  slide_16_9___2 strings  -->
+
+	<string name="menu_string">Choose your game type</string>
+	<string name="menu_ek1_string">Story Mode</string>
+	<string name="advance_string">Free Play</string>
+
+	<!--  name_pick_page strings  -->
+
+	<string name="namemenu_string">Story Mode</string>
+	<string name="namemenu_ek1_string">Story Mode</string>
+	<string name="namemenu_ek2_string">Story Mode</string>
+	<string name="namemenu_ek3_string">Story Mode</string>
+	<string name="namemenu_ek4_string">Story Mode</string>
+	<string name="advance_ek1_string">Free Play</string>
+	<string name="menu_ek5_string">Pick Your Party</string>
 </resources>

@@ -13,8 +13,22 @@
 	<color name="black">#FF000000</color>
 	<color name="white">#FFFFFFFF</color>
 	<color name="rectangle_2_color">#FFF8CB</color>
+
 	<color name="_bg__slide_16_9___1_ek2_color">#FFFFFF</color>
 	<color name="date_box_color">#FFF8CB</color>
 	<color name="date_message_color">#000000</color>
 	<color name="text_color">#001428</color>
+
+	<!--  slide_16_9___2 colors  -->
+
+
+	<color name="menu_color">#000000</color>
+	<color name="menu_button_ek1_color">#FFF8CB</color>
+
+
+	<!--  name_pick_page colors  -->
+
+	<color name="_bg__name_pick_page_ek2_color">#FFFFFF</color>
+	<color name="advance_button_color">#FFF8CB</color>
+
 </resources>

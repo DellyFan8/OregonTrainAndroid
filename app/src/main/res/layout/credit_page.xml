@@ -1,0 +1,125 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		slide_16_9___1
+	 *	@date 		Wednesday 19th of April 2023 08:03:19 PM
+	 *	@title 		Page 1
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/slide_16_9___1" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+			<RelativeLayout android:id="@+id/page_slide_16_9___1_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View   android:id="@+id/_bg__slide_16_9___1_ek2"
+					android:background="@drawable/_bg__slide_16_9___1_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="960dp"
+					android:layout_height="540dp" />
+
+
+				<ImageView
+					android:id="@+id/oregon_trail_opener_1"
+					android:layout_width="960dp"
+					android:layout_height="540dp"
+					android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:contentDescription="oregon_trail_opener_1"
+					android:src="@drawable/oregon_trail_opener_1" />
+
+				<RelativeLayout
+					android:id="@+id/buttons"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="375dp"
+					android:layout_marginTop="422dp">
+
+
+					<RelativeLayout
+						android:id="@+id/ic_arrow_left"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginStart="4dp"
+						android:layout_marginTop="4dp"/>
+
+					<Button
+						android:fontFamily="@font/inter_bold"
+						android:id="@+id/text"
+						android:layout_width="224dp"
+						android:layout_height="45.5dp"
+						android:layout_gravity="center_horizontal|center"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="22.5dp"
+						android:gravity="center"
+						android:text="Back"
+						android:textColor="@color/text_color"
+						android:background="@drawable/tan_button"
+						android:textSize="20sp" />
+
+
+				</RelativeLayout>
+
+				<RelativeLayout android:id="@+id/buttons_ek1"
+					android:layout_marginTop="122dp"
+					android:layout_marginStart="101dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<TextView android:id="@+id/text_ek1"
+						android:fontFamily="@font/inter_bold"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="20sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="22.5dp"
+						android:layout_width="758dp"
+						android:layout_height="270dp"
+						android:text="This game was developed by: \nAustin Hanni-Wells, Aaron Hess, Elliott Powell, and Elliot Schmeling\n\nAll Images are credited to DALL-E"
+						android:background="@drawable/tan_button"
+
+						/>
+
+
+					<RelativeLayout android:id="@+id/ic_arrow_right_ek1"
+						android:layout_marginTop="4dp"
+						android:layout_marginStart="70dp"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						/>
+
+				</RelativeLayout>
+
+
+
+				</RelativeLayout>
+
+		</RelativeLayout>
+
+
+	</ScrollView>
+</HorizontalScrollView>
