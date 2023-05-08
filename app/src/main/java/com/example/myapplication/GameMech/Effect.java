@@ -2,7 +2,48 @@ package com.example.myapplication.GameMech;
 
 import java.util.Objects;
 
+
 public class Effect {
+    enum Type {Dysentery, Cholera, Measles, Tyhoidfever,Prairiefever}
+    Type effecttype;
+
+    /**
+     * Instantiates a new Effect.
+     *
+     * @param type the type of sickness
+     */
+    public Effect(Type type){
+        this.effecttype= type;
+
+    }
+
+    /**
+     * Gets Type of the effect.
+     *
+     * @return the effecttype
+     */
+    public Type getEffecttype() {
+        return effecttype;
+    }
+
+    /**
+     * Return the name of the given sickness.
+     *
+     * @return the name of the sickness
+     */
+    public String sicknessName(){
+        if (effecttype==Type.Dysentery){
+            return "Dysentery";
+        }if (effecttype==Type.Cholera){
+            return "Cholera";
+        }if (effecttype==Type.Measles) {
+            return "Measles";
+        }if (effecttype==Type.Prairiefever){
+            return "Prairie fever";
+        }else
+            return "Typhoid fever";
+    }
+
     public int Sickness(String type, int health) {
         if (Objects.equals(type, "dysentery") || Objects.equals(type, "cholera")) {
             if (health <= 20) {
@@ -37,5 +78,13 @@ public class Effect {
         else {
             return (" got ");
         }
+    }
+
+
+    @Override
+    public String toString() {
+        return "Effect{" +
+                "effecttype=" + effecttype +
+                '}';
     }
 }

@@ -19,6 +19,10 @@ package com.example.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Bundle;
 
 
@@ -26,13 +30,20 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Opener_Activity extends Activity {
+import java.util.HashMap;
+
+	public class Opener_Activity extends Activity {
 	
 	private View _bg__slide_16_9___1_ek2;
 	private ImageView oregon_trail_opener_1;
 	private TextView text;
 	private TextView text_ek1;
 	private TextView text_ek2;
+
+
+	SoundPool sounds;
+	int soundID;
+
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,19 +60,50 @@ public class Opener_Activity extends Activity {
 
 
 
+		AudioAttributes attributes = new AudioAttributes.Builder()
+				.setUsage(AudioAttributes.USAGE_GAME)
+				.setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
+				.build();
+		sounds = new SoundPool.Builder()
+				.setMaxStreams(10)
+				.setAudioAttributes(attributes)
+				.build();
+		soundID = sounds.load(this, R.raw.button,1);
+
+
 		
 		//custom code goes here
 
-		text.setOnClickListener(v -> openActivity(Game_Mode_Activity.class));
-		text_ek2.setOnClickListener(v->openActivity(creditActivity.class));
-		text_ek1.setOnClickListener((v-> openActivity(aboutActivity.class)));
+		text.setOnClickListener(v -> play());
+		text_ek2.setOnClickListener(v-> credit());
+		text_ek1.setOnClickListener(v-> about());
 
+	}
+
+	public void about(){
+		buttonSound();
+		openActivity(aboutActivity.class);
+	}
+
+	public void play(){
+		buttonSound();
+		openActivity(Game_Mode_Activity.class);
+	}
+
+	public void credit(){
+		buttonSound();
+		openActivity(creditActivity.class);
+	}
+
+	public void buttonSound(){
+		sounds.play(soundID, 50, 50, 1, 0,1);
 	}
 
 	public void openActivity(Class classToOpen){
 		Intent intent = new Intent(this, classToOpen);
 		startActivity(intent);
 	}
-}
+
+	}
 	
 	

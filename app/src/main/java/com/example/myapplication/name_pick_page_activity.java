@@ -23,6 +23,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.myapplication.GameMech.GameMechs;
 import com.example.myapplication.GameMech.Person;
 import android.view.View;
 import android.widget.Button;
@@ -59,6 +60,7 @@ import java.util.Random;
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.name_pick_page);
 
+
 			continueButton = findViewById(R.id.text);
 			_bg__name_pick_page_ek2 = (View) findViewById(R.id._bg__name_pick_page_ek2);
 			wagon_1 = (ImageView) findViewById(R.id.wagon_1);
@@ -70,6 +72,14 @@ import java.util.Random;
 			titleblock = (View) findViewById(R.id.titleblock);
 			menu_ek5 = (TextView) findViewById(R.id.menu_ek5);
 
+			generateNames();
+
+			name1.setText(party.get(0).getName());
+			name2.setText(party.get(1).getName());
+			name3.setText(party.get(2).getName());
+			name4.setText(party.get(3).getName());
+			name5.setText(party.get(4).getName());
+
 
 			//custom code goes here
 
@@ -79,11 +89,8 @@ import java.util.Random;
 		}
 
 		private void onClick() {
-			System.out.println(name1.getText().toString() + ", " + name2.getText().toString() + ", " + name3.getText().toString() + ", " + name4.getText().toString() + ", " + name5.getText().toString());
-
 			//set names in program
-
-			openActivity(Main_Game_Activity.class);
+			openActivity(Profession_Activity.class);
 		}
 
 		public void openActivity(Class classToOpen) {
@@ -95,6 +102,7 @@ import java.util.Random;
 			Random random = new Random();
 			List<String> name = Arrays.asList("John", "William", "James", "George", "Charles", "Joseph", "Robert", "Henry", "Edward", "Thomas", "Samuel", "David", "Frank", "Benjamin", "Andrew", "Peter", "Daniel", "Isaac", "Michael", "Abraham", "Mary", "Elizabeth", "Sarah", "Margaret", "Susan", "Ann", "Jane", "Emily", "Emma", "Catherine", "Caroline", "Martha", "Harriet", "Ellen", "Julia", "Alice", "Rebecca", "Hannah", "Louisa", "Frances");
 			out.println("Your Party names: ");
+			party = new ArrayList<Person>();
 
 			//Declaring Father Figure
 			int namepos = random.nextInt(20);
@@ -124,6 +132,12 @@ import java.util.Random;
 			}
 
 
+			GameMechs gameMechs = new GameMechs();
+			gameMechs.setParty(party);
+		}
+
+		public ArrayList<Person> getParty(){
+			return party;
 		}
 
 	}

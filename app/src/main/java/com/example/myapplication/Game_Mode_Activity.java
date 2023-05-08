@@ -45,7 +45,7 @@ public class Game_Mode_Activity extends Activity {
 		
 		//custom code goes here
 
-		freePlay.setOnClickListener(v -> openActivity(Main_Game_Activity.class));
+		freePlay.setOnClickListener(v -> openActivity(name_pick_page_activity.class));
 	
 	}
 

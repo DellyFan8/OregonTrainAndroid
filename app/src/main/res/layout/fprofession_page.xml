@@ -1,0 +1,162 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		slide_16_9___2
+	 *	@date 		Sunday 30th of April 2023 05:50:19 PM
+	 *	@title 		Page 1
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/slide_16_9___2" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+			<RelativeLayout android:id="@+id/page_slide_16_9___2_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View   android:id="@+id/_bg__slide_16_9___2_ek2"
+					android:background="@drawable/_bg__slide_16_9___2_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="960dp"
+					android:layout_height="540dp" />
+
+				<ImageView android:id="@+id/wagon_1"
+					android:src="@drawable/wagon_1"
+					android:contentDescription="wagon_1"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="960dp"
+					android:layout_height="540dp" />
+
+
+				<RelativeLayout android:id="@+id/frame_4"
+					android:layout_marginTop="163dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<View   android:id="@+id/menu_button"
+						android:background="@drawable/menu_button_shape"
+						 android:layout_marginStart="0dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp" />
+
+					<TextView android:id="@+id/menu"
+						android:fontFamily="Inter"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:layout_centerVertical="true"
+						android:textSize="27sp"
+						android:textColor="@color/menu_color"
+						android:layout_marginLeft="12dp"
+						android:layout_marginTop="17dp"
+						android:layout_width="327dp"
+						android:layout_height="42.5dp"
+						android:text="Choose your career"
+						 />
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/story_play"
+					android:layout_marginTop="319dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<Button   android:id="@+id/story_mode_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="Banker"
+						/>
+
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/free_mode"
+					android:layout_marginTop="241dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<Button   android:id="@+id/free_mode_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="Carpenter"
+						/>
+
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/farmer"
+					android:layout_marginTop="397dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<Button   android:id="@+id/farmer_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="Farmer"
+						/>
+
+
+				</RelativeLayout>
+
+			</RelativeLayout>
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>
