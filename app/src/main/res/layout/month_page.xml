@@ -1,0 +1,216 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent" android:layout_height="wrap_content" >
+	<!-- 
+	/*
+	 *	This content is generated from the API File Info.
+	 *	(Alt+Shift+Ctrl+I).
+	 *
+	 *	@desc 		
+	 *	@file 		slide_16_9___2
+	 *	@date 		Sunday 30th of April 2023 05:50:19 PM
+	 *	@title 		Page 1
+	 *	@author 	
+	 *	@keywords 	
+	 *	@generator 	Export Kit v1.3.figma
+	 *
+	 */
+	-->
+	<ScrollView android:id="@+id/slide_16_9___2" 
+		android:layout_width="wrap_content" 
+		android:layout_height="match_parent" >
+
+		<RelativeLayout android:id="@+id/content_container" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" >
+
+
+
+			<RelativeLayout android:id="@+id/page_slide_16_9___2_ek1"
+				android:layout_marginTop="0dp"
+				android:layout_marginStart="0dp"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				>
+
+				<View   android:id="@+id/_bg__slide_16_9___2_ek2"
+					android:background="@drawable/_bg__slide_16_9___2_ek2_shape"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="960dp"
+					android:layout_height="540dp" />
+
+				<ImageView android:id="@+id/wagon_1"
+					android:src="@drawable/wagon_1"
+					android:contentDescription="wagon_1"
+					 android:layout_marginStart="0dp"
+					android:layout_marginTop="0dp"
+					android:layout_width="960dp"
+					android:layout_height="540dp" />
+
+
+				<RelativeLayout android:id="@+id/frame_4"
+					android:layout_marginTop="46dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<View   android:id="@+id/menu_button"
+						android:background="@drawable/menu_button_shape"
+						 android:layout_marginStart="0dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp" />
+
+					<TextView android:id="@+id/menu"
+						android:fontFamily="Inter"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:layout_centerVertical="true"
+						android:textSize="27sp"
+						android:textColor="@color/menu_color"
+						android:layout_marginLeft="12dp"
+						android:layout_marginTop="17dp"
+						android:layout_width="327dp"
+						android:layout_height="42.5dp"
+						android:text="When are you leaving?"
+						 />
+
+				</RelativeLayout>
+
+
+
+
+
+				<RelativeLayout android:id="@+id/march"
+					android:layout_marginTop="124dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<Button   android:id="@+id/march_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="March"
+						/>
+
+
+				</RelativeLayout>
+
+
+
+				<RelativeLayout android:id="@+id/april"
+					android:layout_marginTop="202dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<Button   android:id="@+id/april_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="April"
+						/>
+
+
+				</RelativeLayout>
+
+
+				<RelativeLayout android:id="@+id/may"
+					android:layout_marginTop="280dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+					<Button   android:id="@+id/may_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="May"
+						/>
+
+
+				</RelativeLayout>
+
+				<RelativeLayout android:id="@+id/june"
+					android:layout_marginTop="358dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<Button   android:id="@+id/june_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="June"
+						/>
+
+
+				</RelativeLayout>
+
+				<RelativeLayout android:id="@+id/july"
+					android:layout_marginTop="436dp"
+					android:layout_marginStart="491dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					>
+
+
+					<Button   android:id="@+id/july_button"
+						android:background="@drawable/menu_button_ek1_shape"
+						android:fontFamily="@font/inter_regular"
+						android:layout_gravity="center_horizontal|center"
+						android:gravity="center"
+						android:textSize="25sp"
+						android:textColor="@color/text_color"
+						android:layout_marginLeft="-1dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="349dp"
+						android:layout_height="63dp"
+						android:text="July"
+						/>
+
+
+				</RelativeLayout>
+
+			</RelativeLayout>
+		</RelativeLayout>
+
+	</ScrollView>
+</HorizontalScrollView>

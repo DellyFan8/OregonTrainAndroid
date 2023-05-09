@@ -1,0 +1,471 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+    <!--
+    /*
+     *	This content is generated from the API File Info.
+     *	(Alt+Shift+Ctrl+I).
+     *
+     *	@desc
+     *	@file 		slide_16_9___2
+     *	@date 		Sunday 30th of April 2023 05:50:19 PM
+     *	@title 		Page 1
+     *	@author
+     *	@keywords
+     *	@generator 	Export Kit v1.3.figma
+     *
+     */
+    -->
+    <ScrollView android:id="@+id/slide_16_9___2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_slide_16_9___2_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__slide_16_9___2_ek2"
+                    android:background="@drawable/_bg__slide_16_9___2_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="960dp"
+                    android:layout_height="540dp" />
+
+                <ImageView android:id="@+id/store"
+                    android:src="@drawable/store"
+                    android:contentDescription="wagon_1"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="960dp"
+                    android:layout_height="540dp" />
+
+
+                <RelativeLayout android:id="@+id/title_block_layout"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="890dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="StoreName"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout1"
+                    android:layout_marginTop="78dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block1"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text1"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText1"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button1"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout2"
+                    android:layout_marginTop="146dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block2"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text2"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText2"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button2"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout3"
+                    android:layout_marginTop="214dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block3"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text3"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText3"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button3"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout4"
+                    android:layout_marginTop="282dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block4"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text4"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText4"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button4"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout5"
+                    android:layout_marginTop="350dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block5"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text5"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText5"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button5"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout android:id="@+id/title_block_layout6"
+                    android:layout_marginTop="418dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+                    <View   android:id="@+id/title_block6"
+                        android:background="@drawable/name1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="900dp"
+                        android:layout_height="63dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_margin="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:gravity="center_vertical"
+                        android:layout_gravity="center_vertical"
+                        >
+                        <TextView
+                            android:id="@+id/title_text6"
+                            android:layout_width="660dp"
+                            android:layout_height="42.5dp"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_horizontal|center"
+                            android:layout_marginLeft="12dp"
+                            android:fontFamily="Inter"
+                            android:text="Choose your career"
+                            android:textColor="@color/menu_color"
+                            android:textSize="27sp" />
+                        <EditText
+                            android:id="@+id/title_editText6"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:text="0"
+                            android:gravity="center"
+                            android:fontFamily="@font/inter_regular"
+                            android:textSize="20sp"
+                            >
+                        </EditText>
+                        <Button
+                            android:id="@+id/title_button6"
+                            android:layout_width="100dp"
+                            android:layout_height="42.5dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/store_button"
+                            android:text="Buy"
+                            android:textSize="25dp"
+                            android:fontFamily="@font/inter_bold"
+                            android:textColor="#ffffff"
+                            >
+                        </Button>
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+
+    </ScrollView>
+</HorizontalScrollView>

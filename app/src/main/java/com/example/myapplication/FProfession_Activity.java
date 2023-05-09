@@ -66,7 +66,7 @@ package com.example.myapplication;
             else{
                 gameMechs.setMoney(0);
             }
-            openActivity(Main_Game_Activity.class);
+            openActivity(Month_Activity.class);
         }
 
         public void openActivity(Class classToOpen){

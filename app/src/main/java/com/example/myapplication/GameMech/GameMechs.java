@@ -2,9 +2,31 @@ package com.example.myapplication.GameMech;
 
 import java.util.ArrayList;
 
+
+//The GameMechs class stores the temporary information that needs passed between classes
 public class GameMechs {
     static int money;
     static ArrayList<Person> party;
+
+    public static Inventory getInventory() {
+        return inventory;
+    }
+
+    public static void setInventory(Inventory inventory) {
+        GameMechs.inventory = inventory;
+    }
+
+    static Inventory inventory;
+
+    public static int getDay() {
+        return day;
+    }
+
+    public static void setDay(int day) {
+        GameMechs.day = day;
+    }
+
+    static int day;
 
     public static int getMoney() {
         return money;

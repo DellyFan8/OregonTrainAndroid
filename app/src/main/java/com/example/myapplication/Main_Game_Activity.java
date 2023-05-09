@@ -41,33 +41,30 @@ package com.example.myapplication;
 	import android.widget.ImageView;
 	import android.widget.TextView;
 
+	import com.example.myapplication.GameMech.Event;
 	import com.example.myapplication.GameMech.GameMechs;
 	import com.example.myapplication.GameMech.Inventory;
+	import com.example.myapplication.GameMech.Location;
 	import com.example.myapplication.GameMech.Map;
 	import com.example.myapplication.GameMech.Person;
+	import com.example.myapplication.GameMech.Store;
 
 	import java.util.ArrayList;
 
 	public class Main_Game_Activity extends Activity {
 
-
 		static Inventory inventory;
 		static ArrayList<Person> party;
 		static Map oregonTrail;
+		static int day;
 
-		private View _bg__slide_16_9___2_ek2;
-		private ImageView landscape7_1;
-		private View date_box;
 		private TextView date_message;
-		private TextView date_;
 		private TextView weather_message;
-		private TextView weather_;
-		private View locaton_box;
 		private TextView city_message;
-		private TextView location_;
 		private TextView distance_message;
 		private Button advance_button;
 		private Button menu_button;
+		ArrayList<Location> runnerLocations;
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
@@ -75,25 +72,24 @@ package com.example.myapplication;
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.main_game_page);
 
-
-			_bg__slide_16_9___2_ek2 = (View) findViewById(R.id._bg__slide_16_9___2_ek2);
-			landscape7_1 = (ImageView) findViewById(R.id.landscape7_1);
-			date_box = (View) findViewById(R.id.date_box);
 			date_message = (TextView) findViewById(R.id.date_message);
-			date_ = (TextView) findViewById(R.id.date_);
 			weather_message = (TextView) findViewById(R.id.weather_message);
-			weather_ = (TextView) findViewById(R.id.weather_);
-			locaton_box = (View) findViewById(R.id.locaton_box);
 			city_message = (TextView) findViewById(R.id.city_message);
-			location_ = (TextView) findViewById(R.id.location_);
 			distance_message = (TextView) findViewById(R.id.distance_message);
 			advance_button = findViewById(R.id.advance_button);
 			menu_button = findViewById(R.id.menu_button);
 
+
+			//Import Settings from windows before this one
 			GameMechs gameMechs = new GameMechs();
 			//custom code goes here
 			inventory = new Inventory(gameMechs.getMoney(), gameMechs.getParty());
-			System.out.println(gameMechs.getMoney()+"\t"+gameMechs.getParty().toString());
+			day = gameMechs.getDay();
+
+
+
+
+
 			playGame();
 
 		}
@@ -105,7 +101,56 @@ package com.example.myapplication;
 		}
 
 		private void playGame(){
+			if(oregonTrail.closestloc().hasStore()){
+				openActivity(Store_Activity.class);
+			}
+		}
 
+		private void setLocations(){
+			//region Location Declaration
+
+			//Declare location runner
+			runnerLocations = new ArrayList<Location>();
+
+			//Independence information
+			runnerLocations.add(new Location(0,"Independence",new Store("Independence Wholesale", inventory,0), 1));
+
+			//KR crossing information
+			Event krCrossing = new Event(Event.EventType.RIVERCROSSING,1450.848,true);
+			runnerLocations.add(new Location(102, "Kansas River crossing",krCrossing));
+
+			//BBR crossing information
+			Event bbrCrossing = new Event(Event.EventType.RIVERCROSSING,2072.64,false);
+			runnerLocations.add(new Location(184,"Big Blue River Crossing",bbrCrossing));
+
+			//Fort Kearny information
+			runnerLocations.add(new Location(319,"Fort Kearny",new Store("Koo Koo Kearney's", inventory), 1.25));
+
+			//Ash Hallow information
+			runnerLocations.add(new Location(504,"Ash Hallow"));
+
+			//Chimney rock information
+			runnerLocations.add(new Location(554,"Chimney Rock"));
+
+			//Scotts Bluff
+			runnerLocations.add(new Location(596,"Scotts Bluff"));
+
+			//Registar Cliff
+			runnerLocations.add(new Location(658,"Register Cliff"));
+
+			//Fort Laramie
+			runnerLocations.add(new Location(750,"Fort Laramie",new Store("Laramie's Store", inventory), 1.5));
+
+			//Independence Rock
+			runnerLocations.add(new Location(815,"Independence Rock"));
+
+			//South Pass
+			Event split1=new Event(Event.EventType.SPLIT1);
+			runnerLocations.add(new Location(914,"South Pass",split1));
+
+
+			setLocations();
+			oregonTrail = new Map(runnerLocations, inventory, day);
 		}
 
 }

@@ -92,7 +92,7 @@ import java.util.HashMap;
 
 	public void credit(){
 		buttonSound();
-		openActivity(creditActivity.class);
+		openActivity(Store_Activity.class);
 	}
 
 	public void buttonSound(){
