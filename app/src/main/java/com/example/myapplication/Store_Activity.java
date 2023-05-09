@@ -29,6 +29,7 @@ package com.example.myapplication;
     import android.widget.TextView;
 
     import com.example.myapplication.GameMech.GameMechs;
+    import com.example.myapplication.GameMech.Inventory;
     import com.example.myapplication.GameMech.Store;
 
     public class Store_Activity extends Activity {
@@ -59,9 +60,14 @@ package com.example.myapplication;
         private EditText item6ET;
         private Button item6B;
 
+        LinearLayout layout;
+        GameMechs gameMechs = new GameMechs();
+        Inventory inventory = gameMechs.getInventory();
 
+        Store store = gameMechs.getStore();
         @Override
         public void onCreate(Bundle savedInstanceState) {
+
 
 
             super.onCreate(savedInstanceState);
@@ -69,26 +75,34 @@ package com.example.myapplication;
 
 
 
-            item1.findViewById(R.id.title_text1);
-            item2.findViewById(R.id.title_text2);
-            item3.findViewById(R.id.title_text3);
-            item4.findViewById(R.id.title_text4);
-            item5.findViewById(R.id.title_text5);
-            item6.findViewById(R.id.title_text6);
+            layout=findViewById(R.id.line);
 
-            item1ET.findViewById(R.id.title_editText1);
-            item2ET.findViewById(R.id.title_editText2);
-            item3ET.findViewById(R.id.title_editText3);
-            item4ET.findViewById(R.id.title_editText4);
-            item5ET.findViewById(R.id.title_editText5);
-            item6ET.findViewById(R.id.title_editText6);
+            storeName= layout.findViewById(R.id.title_textz);
 
-            item1B.findViewById(R.id.title_button1);
-            item2B.findViewById(R.id.title_button2);
-            item3B.findViewById(R.id.title_button3);
-            item4B.findViewById(R.id.title_button4);
-            item5B.findViewById(R.id.title_button5);
-            item6B.findViewById(R.id.title_button6);
+            item1=findViewById(R.id.title_text1);
+            item2=findViewById(R.id.title_text2);
+            item3=findViewById(R.id.title_text3);
+            item4=findViewById(R.id.title_text4);
+            item5=findViewById(R.id.title_text5);
+            item6=findViewById(R.id.title_text6);
+
+            item1ET=findViewById(R.id.title_editText1);
+            item2ET=findViewById(R.id.title_editText2);
+            item3ET=findViewById(R.id.title_editText3);
+            item4ET=findViewById(R.id.title_editText4);
+            item5ET=findViewById(R.id.title_editText5);
+            item6ET=findViewById(R.id.title_editText6);
+
+            item1B=findViewById(R.id.title_button1);
+            item2B=findViewById(R.id.title_button2);
+            item3B=findViewById(R.id.title_button3);
+            item4B=findViewById(R.id.title_button4);
+            item5B=findViewById(R.id.title_button5);
+            item6B=findViewById(R.id.title_button6);
+
+
+            storeName.setText(store.getName());
+            //item1.setText(store.getItemName(0));
 
 
 

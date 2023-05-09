@@ -8,6 +8,16 @@ public class GameMechs {
     static int money;
     static ArrayList<Person> party;
 
+    public static Store getStore() {
+        return store;
+    }
+
+    public static void setStore(Store store) {
+        GameMechs.store = store;
+    }
+
+    static Store store;
+
     public static Inventory getInventory() {
         return inventory;
     }

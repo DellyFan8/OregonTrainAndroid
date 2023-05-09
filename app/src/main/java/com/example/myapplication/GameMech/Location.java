@@ -18,6 +18,15 @@ public class Location {
     private int milesinfromstart;
     private String locationname;
     private Event event;
+
+    public Store getStore() {
+        return store;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
     private Store store;
 
     //
@@ -81,39 +90,39 @@ public class Location {
 
     public void goShopping(){
         //Prints out store's inventory for store
-        boolean stayInStore = true;
-        Scanner keyboard = new Scanner(System.in);
-        System.out.println("Welcome to "+store.getName()+"! Below are our items:\n");
-        while(stayInStore){
-            System.out.println(store);
-            System.out.println("You have "+store.getInventory().getDollars());
-            System.out.println("What number item do you want? Enter -1 to leave instead");
-            int selection = keyboard.nextInt();
-            if(selection==-1){
-                break;
-            }
-            System.out.println("How many");
-            int num = keyboard.nextInt();
-            if(store.confirmPurchase(selection,num)==1){
-                System.out.println("You are about to purchase " + num+ " "+store.getItemName(selection-1)+" for a total of "+ store.getItemPrice(selection-1)*num+"\nAre you sure? (y/n)");
-                String confirm = keyboard.next();
-                if(confirm.equalsIgnoreCase("Y")){
-                    store.purchase(selection, num);
-                    System.out.println("Purchase Confirmed");
-                }
-                else{
-                    System.out.println("Purchase Cancelled");
-                }
-            }
-            else{
-                System.out.println("You either don't have enough money or tried to order more than what is available\nPlease try again.");
-            }
-            System.out.println("Leave? (y/n)");
-            String stayString = keyboard.next();
-            if(stayString.equalsIgnoreCase("Y")){
-                stayInStore = false;
-            }
-        }
+//        boolean stayInStore = true;
+//        Scanner keyboard = new Scanner(System.in);
+//        System.out.println("Welcome to "+store.getName()+"! Below are our items:\n");
+//        while(stayInStore){
+//            System.out.println(store);
+//            System.out.println("You have "+store.getInventory().getDollars());
+//            System.out.println("What number item do you want? Enter -1 to leave instead");
+//            int selection = keyboard.nextInt();
+//            if(selection==-1){
+//                break;
+//            }
+//            System.out.println("How many");
+//            int num = keyboard.nextInt();
+//            if(store.confirmPurchase(selection,num)==1){
+//                System.out.println("You are about to purchase " + num+ " "+store.getItemName(selection-1)+" for a total of "+ store.getItemPrice(selection-1)*num+"\nAre you sure? (y/n)");
+//                String confirm = keyboard.next();
+//                if(confirm.equalsIgnoreCase("Y")){
+//                    store.purchase(selection, num);
+//                    System.out.println("Purchase Confirmed");
+//                }
+//                else{
+//                    System.out.println("Purchase Cancelled");
+//                }
+//            }
+//            else{
+//                System.out.println("You either don't have enough money or tried to order more than what is available\nPlease try again.");
+//            }
+//            System.out.println("Leave? (y/n)");
+//            String stayString = keyboard.next();
+//            if(stayString.equalsIgnoreCase("Y")){
+//                stayInStore = false;
+//            }
+//        }
     }
 
     public void goIntoLocation(){

@@ -65,6 +65,7 @@ package com.example.myapplication;
 		private Button advance_button;
 		private Button menu_button;
 		ArrayList<Location> runnerLocations;
+		GameMechs gameMechs = new GameMechs();
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
@@ -102,6 +103,8 @@ package com.example.myapplication;
 
 		private void playGame(){
 			if(oregonTrail.closestloc().hasStore()){
+				gameMechs.setInventory(inventory);
+				gameMechs.setStore(oregonTrail.closestloc().getStore());
 				openActivity(Store_Activity.class);
 			}
 		}
