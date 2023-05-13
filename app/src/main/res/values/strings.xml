@@ -39,4 +39,11 @@
 	<string name="namemenu_ek4_string">Story Mode</string>
 	<string name="advance_ek1_string">Free Play</string>
 	<string name="menu_ek5_string">Pick Your Party</string>
+
+
+
+	<string name="party_string">Party</string>
+	<string name="inventory_string">Inventory</string>
+	<string name="history_string">History</string>
+
 </resources>

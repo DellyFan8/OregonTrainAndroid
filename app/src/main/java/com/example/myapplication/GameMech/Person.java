@@ -9,6 +9,11 @@ public class Person {
     private int health;
     //health the max health to 30 we can change. sense make?
     private ArrayList<Effect> effects =new ArrayList<>();
+
+    public int getAge() {
+        return age;
+    }
+
     public enum Gender{MALE, FEMALE}
     private final Gender gender;
 
@@ -117,6 +122,21 @@ public class Person {
         return effects;
     }
 
+    public String getEffectString() {
+        String effectsStr = "";
+        for(int i =0; i<effects.size()-1;i++){
+            effectsStr+=effects.get(i)+", ";
+        }
+        if(effects.size()>0){
+            effectsStr+=effects.get(0);
+        }
+        else {
+            effectsStr+="None";
+        }
+        return effectsStr;
+    }
+
+
     /**
      * Remove effect at given index.
      *
@@ -132,7 +152,7 @@ public class Person {
                 "age=" + age +
                 ", name='" + name + '\'' +
                 ", health=" + health +
-                ", Effets=" + effects +
+                ", Effects=" + effects +
                 ", gender=" + gender +
                 '}'+"\n";
     }

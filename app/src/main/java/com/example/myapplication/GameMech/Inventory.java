@@ -176,5 +176,12 @@ public class Inventory {
 
     }
 
+    public int getNumItems() {
+        int weight=0;
+        for (Item item:items){
+            weight+=item.getQuantity();
+        }
+        return weight;
+    }
 }
 

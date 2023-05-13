@@ -31,6 +31,8 @@ package com.example.myapplication;
 	 *
 	 */
 
+	import static java.lang.System.out;
+
 	import android.app.Activity;
 	import android.content.Intent;
 	import android.os.Build;
@@ -50,6 +52,7 @@ package com.example.myapplication;
 	import com.example.myapplication.GameMech.Person;
 	import com.example.myapplication.GameMech.Store;
 
+	import java.net.URISyntaxException;
 	import java.time.LocalDate;
 	import java.time.format.DateTimeFormatter;
 	import java.util.ArrayList;
@@ -90,11 +93,15 @@ package com.example.myapplication;
 			day = gameMechs.getDay();
 
 			advance_button.setOnClickListener(v->openActivity(Store_Activity.class));
-			menu_button.setOnClickListener(v->openActivity(Opener_Activity.class));
+			menu_button.setOnClickListener(v->openActivity(menuActivity.class));
 
-			setLocations();
+			try {
+				setLocations();
+			} catch (URISyntaxException e) {
+				throw new RuntimeException(e);
+			}
 
-				int numdate= gameMechs.getDay();
+			int numdate= gameMechs.getDay();
 			LocalDate date = null;
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
 				date = LocalDate.of(1850, 3, 1).plusDays(numdate);
@@ -117,11 +124,28 @@ package com.example.myapplication;
 				gameMechs.setInventory(inventory);
 				gameMechs.setStore(oregonTrail.closestloc().getStore());
 				gameMechs.setMap(oregonTrail);
-				//openActivity(Store_Activity.class);
+				openActivity(Store_Activity.class);
 			}
+
+			oregonTrail.addnoti("Today we left "+oregonTrail.closestloc().getLocationName()+".");
+			oregonTrail.addnoti("We bought "+inventory.getNumItems()+" items while there.");
+			//endregion
+
+			// Play game
+			oregonTrail.setRainandTemp();
+
+			nextDay();
 		}
 
-		private void setLocations(){
+		private void nextDay() {
+
+
+		}
+
+
+
+
+		private void setLocations() throws URISyntaxException {
 			//region Location Declaration
 
 			//Declare location runner

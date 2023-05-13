@@ -31,4 +31,9 @@
 	<color name="_bg__name_pick_page_ek2_color">#FFFFFF</color>
 	<color name="advance_button_color">#FFF8CB</color>
 
+
+	<!--  main_slide colors  -->
+
+	<color name="_bg__main_slide_ek2_color">#FFFFFF</color>
+	<color name="rectangle_4_color">#4B340C</color>
 </resources>

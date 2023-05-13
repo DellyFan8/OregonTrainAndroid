@@ -80,6 +80,7 @@ package com.example.myapplication;
 
             storeName= layout.findViewById(R.id.title_textz);
 
+
             item1=findViewById(R.id.title_text1);
             item2=findViewById(R.id.title_text2);
             item3=findViewById(R.id.title_text3);
@@ -104,41 +105,46 @@ package com.example.myapplication;
             view6=findViewById(R.id.title_block6);
 
 
-            storeName.setText("Welcome to "+store.getName());
-            item1.setText(store.getItemName(0));
-            item2.setText(store.getItemName(1));
-            item3.setText(store.getItemName(2));
-            item4.setText(store.getItemName(3));
-            item5.setText(store.getItemName(4));
+            setNames();
+
+
+            item1B.setOnClickListener(v->buyItem(1, Integer.parseInt(item1ET.getText().toString())));
+            item2B.setOnClickListener(v->buyItem(2, Integer.parseInt(item2ET.getText().toString())));
+            item3B.setOnClickListener(v->buyItem(3, Integer.parseInt(item3ET.getText().toString())));
+            item4B.setOnClickListener(v->buyItem(4, Integer.parseInt(item4ET.getText().toString())));
+            item5B.setOnClickListener(v->buyItem(5, Integer.parseInt(item5ET.getText().toString())));
+
+            if(store.storeSize()>5){
+                item6B.setOnClickListener(v->buyItem(6, Integer.parseInt(item6ET.getText().toString())));
+            }
+
+
+
+        }
+        private void setNames(){
+            storeName.setText("Welcome to "+store.getName()+"  ||  You have: $"+store.getInventory().getDollars());
+            item1.setText(store.getItemName(0)+"  ||  "+(int)store.getItemNum(0)+" Available- $"+store.getItemPrice(0)+" Each");
+            item2.setText(store.getItemName(1)+"  ||  "+(int)store.getItemNum(1)+" Available- $"+store.getItemPrice(1)+" Each");
+            item3.setText(store.getItemName(2)+"  ||  "+(int)store.getItemNum(2)+" Available- $"+store.getItemPrice(2)+" Each");
+            item4.setText(store.getItemName(3)+"  ||  "+(int)store.getItemNum(3)+" Available- $"+store.getItemPrice(3)+" Each");
+            item5.setText(store.getItemName(4)+"  ||  "+(int)store.getItemNum(4)+" Available- $"+store.getItemPrice(4)+" Each");
 
 
             if(store.storeSize()>5){
-                item6.setText(store.getItemName(5));
+                item6.setText(store.getItemName(5)+"  ||  "+(int)store.getItemNum(5)+" Available- $"+store.getItemPrice(5)+" Each");
             }
             else{
                 item6.setVisibility(View.GONE);
                 item6ET.setVisibility(View.GONE);
                 item6B.setVisibility(View.GONE);
                 view6.setVisibility(View.GONE);
-            }
+            }}
 
 
-
-
-
-        }
         private void buyItem(int num, int quant){
             if(store.confirmPurchase(num,quant)==1){
-                PopupWindow popupWindow = new PopupWindow();
-                popupWindow.setContentView(R.layout.popup);
-                String confirm = keyboard.next();
-                if(confirm.equalsIgnoreCase("Y")){
-                    store.purchase(selection, num);
-                    System.out.println("Purchase Confirmed");
-                }
-                else{
-                    System.out.println("Purchase Cancelled");
-                }
+                store.purchase(num,quant);
+                setNames();
             }
             else{
                 System.out.println("You either don't have enough money or tried to order more than what is available\nPlease try again.");

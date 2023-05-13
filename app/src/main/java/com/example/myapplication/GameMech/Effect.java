@@ -83,8 +83,6 @@ public class Effect {
 
     @Override
     public String toString() {
-        return "Effect{" +
-                "effecttype=" + effecttype +
-                '}';
+        return ""+effecttype.toString();
     }
 }

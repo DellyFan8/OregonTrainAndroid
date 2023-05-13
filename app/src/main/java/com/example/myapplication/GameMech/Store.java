@@ -78,6 +78,10 @@ public class Store {
         return storeItems.get(item).getCost();
     }
 
+    public double getItemNum(int item){
+        return storeItems.get(item).getQuantity();
+    }
+
     public void addItem(StoreItem item){
         storeItems.add(item);
     }

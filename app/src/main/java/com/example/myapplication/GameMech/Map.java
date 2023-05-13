@@ -10,6 +10,8 @@ import java.util.Random;
 
 import static java.lang.System.out;
 
+import com.example.myapplication.R;
+
 //I think we should probably have a map class
 public class Map {
     public static void main(String[] args){
@@ -51,7 +53,7 @@ public class Map {
             this.daynumber=day;
             this.startnumber=day;
             this.playerinventory = inventory;
-//            weatherregion.add(new WeatherRegion(new File("java\\weather1.csv")));
+           //weatherregion.add(new WeatherRegion(new File("src/main/res/raw/weather1.csv")));
 //            weatherregion.add(new WeatherRegion(new File("weather2.csv")));
 //            weatherregion.add(new WeatherRegion(new File("weather3.csv")));
 //            weatherregion.add(new WeatherRegion(new File("weather4.csv")));
