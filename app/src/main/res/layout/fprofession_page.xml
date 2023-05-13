@@ -74,7 +74,7 @@
 						android:layout_marginTop="17dp"
 						android:layout_width="327dp"
 						android:layout_height="42.5dp"
-						android:text="Choose your career"
+						android:text="Select wife's career"
 						 />
 
 				</RelativeLayout>

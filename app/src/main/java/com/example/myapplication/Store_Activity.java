@@ -25,6 +25,7 @@ package com.example.myapplication;
     import android.widget.Button;
     import android.widget.EditText;
     import android.widget.LinearLayout;
+    import android.widget.PopupWindow;
     import android.widget.RelativeLayout;
     import android.widget.TextView;
 
@@ -60,10 +61,10 @@ package com.example.myapplication;
         private EditText item6ET;
         private Button item6B;
 
+        private View view6;
+
         LinearLayout layout;
         GameMechs gameMechs = new GameMechs();
-        Inventory inventory = gameMechs.getInventory();
-
         Store store = gameMechs.getStore();
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -100,16 +101,49 @@ package com.example.myapplication;
             item5B=findViewById(R.id.title_button5);
             item6B=findViewById(R.id.title_button6);
 
+            view6=findViewById(R.id.title_block6);
 
-            storeName.setText(store.getName());
-            //item1.setText(store.getItemName(0));
+
+            storeName.setText("Welcome to "+store.getName());
+            item1.setText(store.getItemName(0));
+            item2.setText(store.getItemName(1));
+            item3.setText(store.getItemName(2));
+            item4.setText(store.getItemName(3));
+            item5.setText(store.getItemName(4));
+
+
+            if(store.storeSize()>5){
+                item6.setText(store.getItemName(5));
+            }
+            else{
+                item6.setVisibility(View.GONE);
+                item6ET.setVisibility(View.GONE);
+                item6B.setVisibility(View.GONE);
+                view6.setVisibility(View.GONE);
+            }
+
 
 
 
 
         }
-
-
+        private void buyItem(int num, int quant){
+            if(store.confirmPurchase(num,quant)==1){
+                PopupWindow popupWindow = new PopupWindow();
+                popupWindow.setContentView(R.layout.popup);
+                String confirm = keyboard.next();
+                if(confirm.equalsIgnoreCase("Y")){
+                    store.purchase(selection, num);
+                    System.out.println("Purchase Confirmed");
+                }
+                else{
+                    System.out.println("Purchase Cancelled");
+                }
+            }
+            else{
+                System.out.println("You either don't have enough money or tried to order more than what is available\nPlease try again.");
+            }
+        }
 
     }
 	

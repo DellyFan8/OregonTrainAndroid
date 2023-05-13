@@ -10,13 +10,13 @@
 
 	<!--  slide_16_9___2 strings  -->
 
-	<string name="date_message_string">04/40/2019</string>
+	<string name="date_message_string">05/09/2023</string>
 	<string name="date__string">Date:</string>
 	<string name="weather_message_string">Thunderstorms</string>
 	<string name="weather__string">Weather:</string>
 	<string name="city_message_string">City</string>
 	<string name="location__string">Location:</string>
-	<string name="distance_message_string">You are xx miles fgrom independence</string>
+	<string name="distance_message_string">You are 0 miles from Independence</string>
 	<string name="messages_go_here_string">Messages Go Here</string>
 	<string name="button_5_string">Button 5</string>
 	<string name="button_4_string">Button 4</string>

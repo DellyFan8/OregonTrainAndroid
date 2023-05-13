@@ -42,9 +42,9 @@ public class WeatherRegion {
                 i++;
             }
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
-            scan.close();
+           // scan.close();
         }
 
         this.weather = weatherrunners;

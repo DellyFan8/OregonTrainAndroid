@@ -51,12 +51,11 @@ public class Map {
             this.daynumber=day;
             this.startnumber=day;
             this.playerinventory = inventory;
-            weatherregion.add(new WeatherRegion(new File("src\\main\\resources\\weather1.csv")));
-            weatherregion.add(new WeatherRegion(new File("src\\main\\resources\\weather2.csv")));
-            weatherregion.add(new WeatherRegion(new File("src\\main\\resources\\weather3.csv")));
-            weatherregion.add(new WeatherRegion(new File("src\\main\\resources\\weather4.csv")));
-            weatherregion.add(new WeatherRegion(new File("src\\main\\resources\\weather5.csv")));
-
+//            weatherregion.add(new WeatherRegion(new File("java\\weather1.csv")));
+//            weatherregion.add(new WeatherRegion(new File("weather2.csv")));
+//            weatherregion.add(new WeatherRegion(new File("weather3.csv")));
+//            weatherregion.add(new WeatherRegion(new File("weather4.csv")));
+//            weatherregion.add(new WeatherRegion(new File("weather5.csv")));
         }
 
     public Inventory getPlayerinventory() {

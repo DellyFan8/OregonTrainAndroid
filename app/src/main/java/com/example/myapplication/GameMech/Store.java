@@ -82,6 +82,9 @@ public class Store {
         storeItems.add(item);
     }
 
+    public int storeSize(){
+        return storeItems.size();
+    }
     @Override
     public String toString() {
         String toReturn = "Option #:\tItem:\t\t\tPrice:\t\tQuantity Available\n";

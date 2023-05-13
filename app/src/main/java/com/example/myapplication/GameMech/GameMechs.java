@@ -12,6 +12,16 @@ public class GameMechs {
         return store;
     }
 
+    static Map map;
+
+    public static Map getMap() {
+        return map;
+    }
+
+    public static void setMap(Map map) {
+        GameMechs.map = map;
+    }
+
     public static void setStore(Store store) {
         GameMechs.store = store;
     }

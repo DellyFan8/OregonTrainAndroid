@@ -58,13 +58,13 @@ package com.example.myapplication;
         private void profession(int number){
             GameMechs gameMechs = new GameMechs();
             if(number == 1){
-                gameMechs.setMoney(200);
+                gameMechs.addMoney(200);
             }
             else if (number == 2){
-                gameMechs.setMoney(100);
+                gameMechs.addMoney(100);
             }
             else{
-                gameMechs.setMoney(0);
+                gameMechs.addMoney(0);
             }
             openActivity(Month_Activity.class);
         }

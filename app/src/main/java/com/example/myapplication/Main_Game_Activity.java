@@ -33,6 +33,7 @@ package com.example.myapplication;
 
 	import android.app.Activity;
 	import android.content.Intent;
+	import android.os.Build;
 	import android.os.Bundle;
 
 
@@ -49,6 +50,8 @@ package com.example.myapplication;
 	import com.example.myapplication.GameMech.Person;
 	import com.example.myapplication.GameMech.Store;
 
+	import java.time.LocalDate;
+	import java.time.format.DateTimeFormatter;
 	import java.util.ArrayList;
 
 	public class Main_Game_Activity extends Activity {
@@ -80,17 +83,25 @@ package com.example.myapplication;
 			advance_button = findViewById(R.id.advance_button);
 			menu_button = findViewById(R.id.menu_button);
 
-
 			//Import Settings from windows before this one
 			GameMechs gameMechs = new GameMechs();
 			//custom code goes here
 			inventory = new Inventory(gameMechs.getMoney(), gameMechs.getParty());
 			day = gameMechs.getDay();
 
+			advance_button.setOnClickListener(v->openActivity(Store_Activity.class));
+			menu_button.setOnClickListener(v->openActivity(Opener_Activity.class));
 
+			setLocations();
 
-
-
+				int numdate= gameMechs.getDay();
+			LocalDate date = null;
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+				date = LocalDate.of(1850, 3, 1).plusDays(numdate);
+			}
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+				date_message.setText(date.format(DateTimeFormatter.ofPattern("MMMM d YYYY")));
+			} // format as "MonthName day"
 			playGame();
 
 		}
@@ -105,7 +116,8 @@ package com.example.myapplication;
 			if(oregonTrail.closestloc().hasStore()){
 				gameMechs.setInventory(inventory);
 				gameMechs.setStore(oregonTrail.closestloc().getStore());
-				openActivity(Store_Activity.class);
+				gameMechs.setMap(oregonTrail);
+				//openActivity(Store_Activity.class);
 			}
 		}
 
@@ -152,7 +164,7 @@ package com.example.myapplication;
 			runnerLocations.add(new Location(914,"South Pass",split1));
 
 
-			setLocations();
+
 			oregonTrail = new Map(runnerLocations, inventory, day);
 		}
 
