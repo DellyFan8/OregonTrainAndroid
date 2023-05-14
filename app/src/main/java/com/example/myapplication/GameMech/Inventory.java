@@ -168,12 +168,21 @@ public class Inventory {
                 ((WagonPart)item).removeItem(((WagonPart) itemtoremove));
             if (itemtoremove.getClass()== Food.class&&item.getClass()==itemtoremove.getClass())
                 ((Food)item).removeItem(((Food) itemtoremove));
-            if (itemtoremove.getClass()== Medicine.class&&item.getClass()==itemtoremove.getClass())
-                ;
+            if (itemtoremove.getClass()== OtherItem.class&&item.getClass()==itemtoremove.getClass())
+                ((Food)item).removeItem(((Food) itemtoremove));
 
         }
 
 
+    }
+
+    public void removeBullets(int quantity){
+        for (Item item:items){
+            if (item.getClass()== OtherItem.class)
+                if (((OtherItem)item).getType()== OtherItem.Type.BULLETS){
+                    item.decreaseQuantity(quantity);
+                }
+        }
     }
 
     public int getNumItems() {

@@ -28,6 +28,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.myapplication.GameMech.GameMechs;
+import com.example.myapplication.GameMech.Inventory;
 import com.example.myapplication.GameMech.Person;
 
 import java.util.ArrayList;
@@ -38,6 +39,7 @@ import java.util.Random;
 	
 	private Button freePlay;
 	private Button storyPlay;
+		GameMechs gameMechs;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -90,12 +92,19 @@ import java.util.Random;
 		names = "Jake";
 		age = random.nextInt(10)+1;
 		party.add(new Person(age, names, 40, Person.Gender.MALE));
-		GameMechs gameMechs = new GameMechs();
+		gameMechs = new GameMechs();
 		gameMechs.setParty(party);
 		gameMechs.setMoney(865);
 		gameMechs.setDay(0);
+		onStartup();
 		openActivity(Main_Game_Activity.class);
 	}
+
+		private void onStartup(){
+			Inventory inventory = new Inventory(gameMechs.getMoney(), gameMechs.getParty());
+			gameMechs.setInventory(inventory);
+			gameMechs.setLocations();
+		}
 }
 	
 	

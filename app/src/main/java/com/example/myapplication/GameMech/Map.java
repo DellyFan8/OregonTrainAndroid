@@ -53,11 +53,11 @@ public class Map {
             this.daynumber=day;
             this.startnumber=day;
             this.playerinventory = inventory;
-           //weatherregion.add(new WeatherRegion(new File("src/main/res/raw/weather1.csv")));
-//            weatherregion.add(new WeatherRegion(new File("weather2.csv")));
-//            weatherregion.add(new WeatherRegion(new File("weather3.csv")));
-//            weatherregion.add(new WeatherRegion(new File("weather4.csv")));
-//            weatherregion.add(new WeatherRegion(new File("weather5.csv")));
+            weatherregion.add(new WeatherRegion(0,319));
+            weatherregion.add(new WeatherRegion(319,750));
+            weatherregion.add(new WeatherRegion(750,1190));
+            weatherregion.add(new WeatherRegion(1190,1642));
+            weatherregion.add(new WeatherRegion(1642,2000));
         }
 
     public Inventory getPlayerinventory() {
@@ -135,8 +135,8 @@ public class Map {
             int distanceToNextLocation = distanceto(closestloc());
             setRainandTemp();
             sicknesshandler();
-            checkforloss();
             consumefood();
+            checkforloss();
             if(distanceToNextLocation<dist && distanceToNextLocation!= 0){
                 daynumber++;
 
@@ -184,8 +184,9 @@ public class Map {
             if(playerinventory.getBullets()>0) {
                 Random rand = new Random();
                 int rationsadd = rand.nextInt(50) + 30;
-                playerinventory.removeItems(new OtherItem(OtherItem.Type.BULLETS, "bullets", 10,false));
+                playerinventory.removeBullets(5);
                 playerinventory.add(new Food(Food.Type.RATIONS, "Rations", rationsadd, false));
+
                 addnoti(rationsadd + " Rations were added to Inventory");
             }
             else{
@@ -236,36 +237,26 @@ public class Map {
 //    }
 
     //display what events happened that day
-        public void dayDisplay(int distanceTravelled){
+        public String dayDisplay(int distanceTravelled){
         //display day related information every time a day advances
         // record names of places entered, rivers crossed etc
 
         //Use we or you?
+            String display = "";
 
-           out.println("Today you travelled "+ distanceTravelled+" miles.");
-           if (distanceto()== 0)
-           {
-               //This can now be handled with noticiations. keeping here because it was stupid once upon a time and good for memories
-//               if (closestloc().hasEvent()) {
-//                   if (closestloc().getEvent().getEventType() == Event.EventType.RIVERCROSSING)
-//                       out.println("You crossed the " + closestloc().getLocationName().substring(0, closestloc().getLocationName().length() - 9) + ".");
-//               }
-           }
-           else out.println(distanceto()+" miles to "+closestloc().getLocationName()+".");
+           display+=("Today you travelled "+ distanceTravelled+" miles.\n");
 
-           //weather printing
-           out.println(weatherString());
 
 
 
         if (notification.size()!=0){
                for (int i = 0; i <notification.size() ; i++) {
-                   out.println(getnoti(i));
+                   display+=(getnoti(i)+"\n");
                }
            }
 
            clearnoti();
-           out.println();
+           return display;
 
     }
 
@@ -313,6 +304,12 @@ public class Map {
             }
             checkfordead();
 
+        }
+
+        public void outOfFood(){
+            for(Person person:playerinventory.getPeopleinparty()){
+                person.decreaseHealth(5);
+            }
         }
 
         public int sicknessRecovery(String name, int health) {
@@ -367,13 +364,9 @@ public class Map {
     }
 
         //Functing to display the date
-        public void datedisplay(){
-        String date = "Day "+(daynumber-startnumber)+", "+toDate()+":";
-        for (int i = 0; i <date.length() ; i++) {
-            out.print(date.charAt(i));
-            wait(100);
-        }
-        out.print("\n");
+        public String datedisplay(){
+        String date = "Day "+(daynumber-startnumber+1)+", "+toDate()+":";
+        return date;
     }
         //A terrible funtion to wait
         static void wait(int ms) {
@@ -396,7 +389,7 @@ public class Map {
             return 0;
     }
         public String weatherString(){
-            String stringname= "Today was ";
+            String stringname= "";
             int temp = (this.daytemp)+32;
             stringname= stringname+temp+" and ";
             if (this.dayrain==0) {
@@ -432,7 +425,7 @@ public class Map {
             //3 sicknesses
             ArrayList<Person> deadRunner=new ArrayList<>();
             for(Person person:playerinventory.getPeopleinparty()){
-                if (person.getHealth()==0)
+                if (person.getHealth()<=0)
                     deadRunner.add(person);
                 if (person.getEffects().size()>=3)
                     deadRunner.add(person);
@@ -441,18 +434,34 @@ public class Map {
             if(!deadRunner.isEmpty()) {
                 for (Person person : deadRunner) {
                     playerinventory.getPeopleinparty().remove(person);
-                    addnoti(person.getName()+" has died from "+person.getEffects().get(0).sicknessName());
+                    if (person.getEffects().size()==0) {
+                        addnoti(person.getName()+" has died from starvation");
+
+                    }
+                    else{
+                        addnoti(person.getName()+" has died from "+person.getEffects().get(0).sicknessName());
+                    }
                 }
             }
     }
     public void consumefood(){
             int consumedfoobar = 0;
+            GameMechs gameMechs = new GameMechs();
             //Can adjust this formula
-            consumedfoobar+= (int) (rations*5+3);
-            playerinventory.removeItems(new Food(Food.Type.RATIONS,"rations",consumedfoobar,false));
-            if(playerinventory.getRations()<consumedfoobar*2){
-                addnoti("You are low on food.");
+            consumedfoobar+= (int) (rations*2+3);
+            if(playerinventory.getRations()-consumedfoobar<0){
+                playerinventory.removeItems(new Food(Food.Type.RATIONS,"Rations",playerinventory.getRations(),false));
+                addnoti("You are out of food!");
+                outOfFood();
             }
+            else{
+                playerinventory.removeItems(new Food(Food.Type.RATIONS,"Rations",consumedfoobar,false));
+
+                if(playerinventory.getRations()<consumedfoobar*2){
+                    addnoti("You are low on food.");
+                }
+            }
+
 
 
     }

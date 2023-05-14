@@ -36,7 +36,7 @@ package com.example.myapplication;
         public void onCreate(Bundle savedInstanceState) {
 
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.credit_page);
+            setContentView(R.layout.about_page);
 
 
             _bg__slide_16_9___1_ek2 = (View) findViewById(R.id._bg__slide_16_9___1_ek2);

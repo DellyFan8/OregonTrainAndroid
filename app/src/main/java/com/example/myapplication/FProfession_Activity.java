@@ -23,6 +23,7 @@ package com.example.myapplication;
     import android.widget.Button;
 
     import com.example.myapplication.GameMech.GameMechs;
+    import com.example.myapplication.GameMech.Inventory;
 
     public class FProfession_Activity extends Activity {
 
@@ -32,12 +33,14 @@ package com.example.myapplication;
         private int money = 0;
 
         private Button farmer;
+
+        GameMechs gameMechs;
         @Override
         public void onCreate(Bundle savedInstanceState) {
 
 
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.profession_page);
+            setContentView(R.layout.fprofession_page);
 
             carpenter = findViewById(R.id.free_mode_button);
             farmer = findViewById(R.id.farmer_button);
@@ -56,7 +59,7 @@ package com.example.myapplication;
         }
 
         private void profession(int number){
-            GameMechs gameMechs = new GameMechs();
+            gameMechs = new GameMechs();
             if(number == 1){
                 gameMechs.addMoney(200);
             }
@@ -66,6 +69,8 @@ package com.example.myapplication;
             else{
                 gameMechs.addMoney(0);
             }
+
+            onStartup();
             openActivity(Month_Activity.class);
         }
 
@@ -76,6 +81,12 @@ package com.example.myapplication;
 
         public int getMoney(){
             return money;
+        }
+
+        private void onStartup(){
+            Inventory inventory = new Inventory(gameMechs.getMoney(), gameMechs.getParty());
+            gameMechs.setInventory(inventory);
+            gameMechs.setLocations();
         }
     }
 	

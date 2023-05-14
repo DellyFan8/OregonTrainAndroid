@@ -31,17 +31,13 @@ package com.example.myapplication;
 	 *
 	 */
 
-	import static java.lang.System.out;
-
 	import android.app.Activity;
 	import android.content.Intent;
-	import android.os.Build;
 	import android.os.Bundle;
 
 
 	import android.view.View;
 	import android.widget.Button;
-	import android.widget.ImageView;
 	import android.widget.TextView;
 
 	import com.example.myapplication.GameMech.Event;
@@ -50,11 +46,7 @@ package com.example.myapplication;
 	import com.example.myapplication.GameMech.Location;
 	import com.example.myapplication.GameMech.Map;
 	import com.example.myapplication.GameMech.Person;
-	import com.example.myapplication.GameMech.Store;
 
-	import java.net.URISyntaxException;
-	import java.time.LocalDate;
-	import java.time.format.DateTimeFormatter;
 	import java.util.ArrayList;
 
 	public class Main_Game_Activity extends Activity {
@@ -70,6 +62,10 @@ package com.example.myapplication;
 		private TextView distance_message;
 		private Button advance_button;
 		private Button menu_button;
+
+		private Button acc_button;
+
+		private TextView notis;
 		ArrayList<Location> runnerLocations;
 		GameMechs gameMechs = new GameMechs();
 
@@ -85,30 +81,47 @@ package com.example.myapplication;
 			distance_message = (TextView) findViewById(R.id.distance_message);
 			advance_button = findViewById(R.id.advance_button);
 			menu_button = findViewById(R.id.menu_button);
+			acc_button = findViewById(R.id.accessory_button);
 
+			notis = findViewById(R.id.notifs);
 			//Import Settings from windows before this one
 			GameMechs gameMechs = new GameMechs();
 			//custom code goes here
-			inventory = new Inventory(gameMechs.getMoney(), gameMechs.getParty());
+			inventory = gameMechs.getInventory();
 			day = gameMechs.getDay();
+			oregonTrail = gameMechs.getMap();
 
-			advance_button.setOnClickListener(v->openActivity(Store_Activity.class));
+			advance_button.setOnClickListener(v->nextDay());
 			menu_button.setOnClickListener(v->openActivity(menuActivity.class));
 
-			try {
-				setLocations();
-			} catch (URISyntaxException e) {
-				throw new RuntimeException(e);
+
+			date_message.setText(oregonTrail.datedisplay());
+			if(inventory.personcount()==0){
+				notis.setText("Everyone is dead\nYou lose!");
+				advance_button.setVisibility(View.GONE);
+				accButtonSet();
 			}
 
-			int numdate= gameMechs.getDay();
-			LocalDate date = null;
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-				date = LocalDate.of(1850, 3, 1).plusDays(numdate);
+			if(oregonTrail.closestloc().hasEvent()&&oregonTrail.distanceto(oregonTrail.closestloc())==0){
+				if(oregonTrail.closestloc().getEvent().eventType== Event.EventType.END){
+					notis.setText("You Made It!!!\n The End");
+					advance_button.setVisibility(View.GONE);
+				}
+				accButtonSet();
+
 			}
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-				date_message.setText(date.format(DateTimeFormatter.ofPattern("MMMM d YYYY")));
-			} // format as "MonthName day"
+			else if(oregonTrail.closestloc().hasStore()&&oregonTrail.distanceto(oregonTrail.closestloc())==0){
+				accButtonSet(1);
+			}
+			else{
+				accButtonSet(3);
+			}
+
+			if(!gameMechs.getHaveStareted()){
+				notis.setText("You should go shopping first to buy supplies");
+			}
+
+			setBars();
 			playGame();
 
 		}
@@ -120,78 +133,98 @@ package com.example.myapplication;
 		}
 
 		private void playGame(){
-			if(oregonTrail.closestloc().hasStore()){
-				gameMechs.setInventory(inventory);
-				gameMechs.setStore(oregonTrail.closestloc().getStore());
-				gameMechs.setMap(oregonTrail);
-				openActivity(Store_Activity.class);
-			}
 
-			oregonTrail.addnoti("Today we left "+oregonTrail.closestloc().getLocationName()+".");
-			oregonTrail.addnoti("We bought "+inventory.getNumItems()+" items while there.");
+			//oregonTrail.addnoti("Today we left "+oregonTrail.closestloc().getLocationName()+".");
+			//oregonTrail.addnoti("We bought "+inventory.getNumItems()+" items while there.");
 			//endregion
 
 			// Play game
-			oregonTrail.setRainandTemp();
+			//
+			 //oregonTrail.setRainandTemp();
 
-			nextDay();
 		}
 
 		private void nextDay() {
+			gameMechs.setHaveStareted(true);
+			notis.setText(oregonTrail.dayDisplay(oregonTrail.advanceDay()));
 
+			setBars();
+
+			if(inventory.personcount()==0){
+				notis.setText("Everyone is dead\nYou lose!");
+				advance_button.setVisibility(View.GONE);
+				accButtonSet();
+			}
+			accButtonSet();
+			if(oregonTrail.closestloc().hasEvent()&&oregonTrail.distanceto(oregonTrail.closestloc())==0){
+				if(oregonTrail.closestloc().getEvent().eventType== Event.EventType.END){
+					notis.setText("You Made It To OREGON!!!\n The End");
+					advance_button.setVisibility(View.GONE);
+					accButtonSet();
+				}
+				accButtonSet();
+			}
+			else if(oregonTrail.closestloc().hasStore()&&oregonTrail.distanceto(oregonTrail.closestloc())==0){
+				accButtonSet(1);
+			}
+			else{
+				accButtonSet(3);
+			}
+		}
+
+		//mode- 1=Store, 2=River, 3=Hunt
+		private void accButtonSet(int mode){
+				acc_button.setVisibility(View.VISIBLE);
+				if(mode == 3){
+					acc_button.setOnClickListener(v->hunt());
+					acc_button.setText("Hunt");
+				}
+				if(mode == 2){
+					acc_button.setOnClickListener(v->river());
+					acc_button.setText("Cross");
+				}
+				if(mode == 1){
+					acc_button.setOnClickListener(v->shop());
+					acc_button.setText("Shop");
+				}
+			}
+		private void accButtonSet(){
+				acc_button.setVisibility(View.GONE);
+				acc_button.setOnClickListener(null);
+			}
+
+		private void shop() {
+			gameMechs.setHaveStareted(true);
+			gameMechs.setStore(oregonTrail.closestloc().getStore());
+			openActivity(Store_Activity.class);
+		}
+
+		private void river() {
+		}
+
+		private void hunt() {
+			oregonTrail.hunt();
 
 		}
 
 
+		private void setBars(){
 
+			date_message.setText(oregonTrail.datedisplay());
+			weather_message.setText(oregonTrail.weatherString());
+			if (oregonTrail.distanceto()== 0)
+			{
+				city_message.setText(oregonTrail.closestloc().getLocationName());
+				distance_message.setText("");
+			}
+			else {
+				city_message.setText("On the trail");
+				distance_message.setText(""+oregonTrail.distanceto()+" miles from "+oregonTrail.closestloc().getLocationName());
+			}
 
-		private void setLocations() throws URISyntaxException {
-			//region Location Declaration
-
-			//Declare location runner
-			runnerLocations = new ArrayList<Location>();
-
-			//Independence information
-			runnerLocations.add(new Location(0,"Independence",new Store("Independence Wholesale", inventory,0), 1));
-
-			//KR crossing information
-			Event krCrossing = new Event(Event.EventType.RIVERCROSSING,1450.848,true);
-			runnerLocations.add(new Location(102, "Kansas River crossing",krCrossing));
-
-			//BBR crossing information
-			Event bbrCrossing = new Event(Event.EventType.RIVERCROSSING,2072.64,false);
-			runnerLocations.add(new Location(184,"Big Blue River Crossing",bbrCrossing));
-
-			//Fort Kearny information
-			runnerLocations.add(new Location(319,"Fort Kearny",new Store("Koo Koo Kearney's", inventory), 1.25));
-
-			//Ash Hallow information
-			runnerLocations.add(new Location(504,"Ash Hallow"));
-
-			//Chimney rock information
-			runnerLocations.add(new Location(554,"Chimney Rock"));
-
-			//Scotts Bluff
-			runnerLocations.add(new Location(596,"Scotts Bluff"));
-
-			//Registar Cliff
-			runnerLocations.add(new Location(658,"Register Cliff"));
-
-			//Fort Laramie
-			runnerLocations.add(new Location(750,"Fort Laramie",new Store("Laramie's Store", inventory), 1.5));
-
-			//Independence Rock
-			runnerLocations.add(new Location(815,"Independence Rock"));
-
-			//South Pass
-			Event split1=new Event(Event.EventType.SPLIT1);
-			runnerLocations.add(new Location(914,"South Pass",split1));
-
-
-
-			oregonTrail = new Map(runnerLocations, inventory, day);
 		}
 
-}
+
+	}
 	
 	

@@ -27,6 +27,7 @@ package com.example.myapplication;
 
     import com.example.myapplication.GameMech.GameMechs;
     import com.example.myapplication.GameMech.Inventory;
+    import com.example.myapplication.GameMech.Item;
     import com.example.myapplication.GameMech.Person;
 
     import java.util.ArrayList;
@@ -45,6 +46,12 @@ package com.example.myapplication;
         private TextView effects;
 
         private TextView historyBox;
+
+        private TextView rations;
+        private Button rationsDown;
+        private Button rationsUp;
+
+
 
         GameMechs gameMechs = new GameMechs();
         Inventory inventoryObj;
@@ -68,12 +75,31 @@ package com.example.myapplication;
             effects = findViewById(R.id.party_effects);
             historyBox = findViewById(R.id.history_box);
 
+            rations = findViewById(R.id.rations);
+            rationsUp = findViewById(R.id.rationsUp);
+            rationsDown = findViewById(R.id.rationsDown);
+
 
 
             party.setOnClickListener(v->setPartyMode());
             history.setOnClickListener(v->setHistoryMode());
             exit.setOnClickListener(v->openActivity(Main_Game_Activity.class));
+            rationsUp.setOnClickListener(v->rations(true));
+            rationsDown.setOnClickListener(v->rations(false));
+            inventory.setOnClickListener(v->setInventoryMode());
 
+            rations.setText("Rations:\n"+gameMechs.getMap().getRations());
+        }
+
+        private void rations(boolean i) {
+            if(i==true&&gameMechs.getMap().getRations()<5){
+                gameMechs.getMap().setRations(1+gameMechs.getMap().getRations());
+                rations.setText("Rations:\n"+gameMechs.getMap().getRations());
+            }
+            if(i==false&&gameMechs.getMap().getRations()>1){
+                gameMechs.getMap().setRations(gameMechs.getMap().getRations()-1);
+                rations.setText("Rations:\n"+gameMechs.getMap().getRations());
+            }
 
         }
 
@@ -85,6 +111,8 @@ package com.example.myapplication;
         private void setPartyMode(){
             clear();
             name.setText("Name");
+            name.setTextSize(30);
+            age.setTextSize(30);
             age.setText("Age");
             health.setText("Health");
             effects.setText("Conditions");
@@ -95,6 +123,24 @@ package com.example.myapplication;
                 age.setText(age.getText()+"\n"+person.getAge());
                 health.setText(health.getText()+"\n"+person.getHealth());
                 effects.setText(effects.getText()+"\n"+person.getEffectString());
+            }
+        }
+
+        private void setInventoryMode(){
+            clear();
+            name.setText("Item");
+            name.setTextSize(24);
+            age.setText("Amount");
+            age.setTextSize(24);
+//            health.setText("Health");
+//            effects.setText("Conditions");
+
+            ArrayList<Item> party = inventoryObj.getItems();
+            for(Item person:party){
+                name.setText(name.getText()+"\n"+person.getName());
+                age.setText(age.getText()+"\n"+person.getQuantity());
+//                health.setText(health.getText()+"\n"+person.getHealth());
+//                effects.setText(effects.getText()+"\n"+person.getEffectString());
             }
         }
 

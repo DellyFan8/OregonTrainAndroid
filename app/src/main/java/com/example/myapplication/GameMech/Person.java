@@ -14,6 +14,10 @@ public class Person {
         return age;
     }
 
+    public void decreaseHealth(int amount) {
+        health-=amount;
+    }
+
     public enum Gender{MALE, FEMALE}
     private final Gender gender;
 
@@ -80,7 +84,7 @@ public class Person {
         Random rand = new Random();
 
         //this num can be adjusted to change how common these get to be
-        if(rand.nextInt(20+(5-rations))>18){
+        if(rand.nextInt(40+(10-2*rations))>39){
             Effect sickness=null;
             switch (rand.nextInt(5)){
                 case 1:

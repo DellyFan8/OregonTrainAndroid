@@ -37,6 +37,10 @@ public class Item {
         quantity--;
     }
 
+    public void decreaseQuantity(int x){
+        quantity-=x;
+    }
+
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }

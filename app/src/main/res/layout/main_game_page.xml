@@ -64,7 +64,7 @@
 
 					<TextView android:id="@+id/date_message"
 						android:fontFamily="Inter"
-						android:textSize="18sp"
+						android:textSize="15sp"
 						android:textColor="@color/date_message_color"
 						android:layout_marginLeft="10dp"
 						android:layout_marginTop="28dp"
@@ -104,6 +104,18 @@
 						android:layout_width="185.5dp"
 						android:layout_height="39.5dp"
 						android:text="@string/weather__string"
+						/>
+
+					<TextView android:id="@+id/notifs"
+						android:fontFamily="@font/inter_bold"
+						android:textSize="24sp"
+						android:textColor="@color/white"
+						android:gravity="center"
+						android:layout_marginLeft="400dp"
+						android:layout_marginTop="4dp"
+						android:layout_width="500dp"
+						android:layout_height="400dp"
+						android:text=""
 						/>
 
 				</RelativeLayout>
@@ -198,6 +210,18 @@
 						android:textSize="27sp"
 						android:fontFamily="@font/inter_regular"
 						/>
+
+					<Button   android:id="@+id/accessory_button"
+						android:background="@drawable/advance_button_shape"
+						android:layout_marginStart="190dp"
+						android:layout_marginTop="0dp"
+						android:layout_width="180dp"
+						android:layout_height="63dp"
+						android:text=""
+						android:textSize="27sp"
+						android:fontFamily="@font/inter_regular"
+						/>
+
 
 				</RelativeLayout>
 

@@ -13,40 +13,23 @@ public class WeatherRegion {
     private int endmilage;
 
 
-    public WeatherRegion(File fileloc) {
-        Scanner scan = null;
-        ArrayList<Weather> weatherrunners = new ArrayList<Weather>();
-        try {
-            scan = new Scanner(fileloc);
-            int i = 0;
-            while (scan.hasNextLine()) {
-                String line = scan.nextLine();
-                String[] lineArray = line.split(",");
-                if (i == 0) {
-                    this.startmilage = Integer.parseInt(lineArray[1]);
-                    this.endmilage = Integer.parseInt(lineArray[3]);
-                } else {
+    public WeatherRegion(int startmilage, int endmilage) {
+        this.startmilage = startmilage;
+        this.endmilage = endmilage;
+        ArrayList<Weather> weatherrunners = new ArrayList<>();
+        for (int i = 0; i < 43; i++) {
+            String tempaverage = "12";
+            String tempmax = "25";
+            String tempmin = "-8";
+            String tempmedian = "4";
+            String rainaverage = "4.3";
+            String rainmax = "42";
+            String rainmedian = "0";
+            String rainzero = "48";
 
-                    String tempaverage = lineArray[1];
-                    String tempmax = lineArray[2];
-                    String tempmin = lineArray[3];
-                    String tempmedian = lineArray[4];
-                    String rainaverage = lineArray[5];
-                    String rainmax = lineArray[6];
-                    String rainmedian = lineArray[7];
-                    String rainzero = lineArray[8];
-
-                    Weather weatherrunner = new Weather(rainaverage, rainmax, rainmedian, rainzero, tempaverage, tempmax, tempmin, tempmedian);
-                    weatherrunners.add(weatherrunner);
-                }
-                i++;
-            }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } finally {
-           // scan.close();
+            Weather weatherrunner = new Weather(rainaverage, rainmax, rainmedian, rainzero, tempaverage, tempmax, tempmin, tempmedian);
+            weatherrunners.add(weatherrunner);
         }
-
         this.weather = weatherrunners;
     }
     boolean inregion(int milage){

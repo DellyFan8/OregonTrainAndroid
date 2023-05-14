@@ -95,11 +95,11 @@
 						android:gravity="center"
 						android:textSize="20sp"
 						android:textColor="@color/text_color"
-						android:layout_marginLeft="-1dp"
+						android:layout_marginLeft="20dp"
 						android:layout_marginTop="22.5dp"
-						android:layout_width="758dp"
+						android:layout_width="728dp"
 						android:layout_height="270dp"
-						android:text="About Goes Here"
+						android:text="If you select story mode, you will be playing as Hattie Campbell, a 13 year old girl from Booneville Missouri.  Your father has announced that you and your family will be moving west and traveling the Oregon Trail.  Along the trail, you will experience the struggles that Hattie faced, and recorded in her journal.  Best of luck making it to Oregon!"
 						android:background="@drawable/tan_button"
 
 						/>
